@@ -8,7 +8,7 @@
 
 ### [프로토타입](#프로토타입)
 - [요구사항](#요구사항)
-- [스케치](#스케치)
+- [스케치 및 요구사항](#스케치-및-요구사항)
 
 ### [유저 컨트롤](#유저-컨트롤)
 - [카메라 컨트롤](#카메라-컨트롤)
@@ -73,7 +73,7 @@
 
 <br>
 
-### 스케치
+### 스케치 및 
 ![스케치](img/0-스케치.JPG)
 
 1. [게임시작] 메뉴판 띄우기
@@ -151,7 +151,7 @@ protected override bool PerformRaycast(GvrBasePointer.PointerRay pointerRay,
 ```
 
 ![](img/6-총질2.png)
-![](img/.png)
+![](img/산탄.png)
 
 - 레이케스트에 충돌한 오브젝트의 위치와 데이터들을 가져옵니다.
 ```c#
@@ -221,7 +221,8 @@ protected override bool PerformRaycast(GvrBasePointer.PointerRay pointerRay,
 - 특정 오브젝트 태그가 `Monster`이면 레이케스터 충돌시 Overlay된 원형 실린더가 확대 됨
 - 특정 오브젝트 태그에 `Monster`이면 레이케스터 비충돌시 점 상태가 됨
 
-![스케치](img/캔버스.JPG)
+![](img/캔버스.JPG)
+
 ```c#
 //GvrPointerInputModuleImpl
     private void UpdatePointer(GameObject previousObject)

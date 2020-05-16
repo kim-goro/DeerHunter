@@ -1,18 +1,18 @@
 # HawkHunter
 > ### 목차
-## 기획
+### 기획
 - 팀원 내 역할
 - 개발 환경
 - 최종 결과물
 - 성과
 
-## 프로토타입
+### 프로토타입
 - 요구사항
 - 스케치
 
-## 유저 컨트롤
-## 게임 로직
-## VFX
+### 유저 컨트롤
+### 게임 로직
+### VFX
 
 <br><br>
 <br><br>
@@ -38,6 +38,7 @@
 
 ### 최종결과물
 - `HawkHunter.apk` 로 직접 실행해 보실 수 있습니다.
+- https://www.dropbox.com/s/np8l6ie19nqbum9/HawkHunter.apk?dl=0
 
 ![](VRgoogle_full.gif)
 

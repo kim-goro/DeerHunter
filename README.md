@@ -32,19 +32,19 @@
 
 
 # 기획
-### 팀원 내 역할
+> ### 팀원 내 역할
 - 총 팀원 3명 중 기획, `클라이언트 프로그래머`, FX담당
 
 <br>
 
-### 개발 환경
+> ### 개발 환경
 - 2019.08 ~ 2019.10 4학년 2학기 과제물
 - Unity 2018.2.9f1
 - `Google CargoBoard`
 
 <br>
 
-### 최종결과물
+> ### 최종결과물
 - `HawkHunter.apk` 로 직접 실행해 보실 수 있습니다.
 - https://www.dropbox.com/s/np8l6ie19nqbum9/HawkHunter.apk?dl=0
 
@@ -52,7 +52,7 @@
 
 <br>
 
-### 성과
+> ### 성과
 - Unity Particle System에 전반적인 사용법 학습.
 - `Google VR Kit` 사용법 및 실습.
 
@@ -66,14 +66,14 @@
 
 
 # 프로토타입
-### 요구사항
+> ### 요구사항
 - 모바일에 적합한 UI 및 리소스 사용.
 - 모바일에 적합한 간단한 게임 루프
 - GoogleVR에 적합한 `원터치` 게임을 기획
 
 <br>
 
-### 스케치 및 
+> ### 스케치 및 
 ![스케치](img/0-스케치.JPG)
 
 1. [게임시작] 메뉴판 띄우기
@@ -96,7 +96,7 @@
 
 
 # 유저 컨트롤
-### 카메라 컨트롤
+> ### 카메라 컨트롤
 - `Gvr Pointer Physics Raycaster`
     - Raycater Event Mask : 레이케스터 이벤트가 발동될 레이어마스크를 선택합니다.
     - Max Raycast Hits : 레이케스트 최대 충돌 횟수
@@ -189,7 +189,7 @@ protected override bool PerformRaycast(GvrBasePointer.PointerRay pointerRay,
 
 <br>
 
-### VR 컨트롤러
+> ### VR 컨트롤러
 ![컨트롤러](img/컨트롤러.JPG)
 - `GvrEditorEmulator` : 에디터에서 빌드 시 컨트롤러를 도와줍니다.
 - `GvrHeadser` : 메인 카메라를 Gvr로 초기화시킵다.
@@ -217,7 +217,7 @@ protected override bool PerformRaycast(GvrBasePointer.PointerRay pointerRay,
 
 <br>
 
-### 레이케스터 컨트롤
+> ### 레이케스터 컨트롤
 - 특정 오브젝트 태그가 `Monster`이면 레이케스터 충돌시 Overlay된 원형 실린더가 확대 됨
 - 특정 오브젝트 태그에 `Monster`이면 레이케스터 비충돌시 점 상태가 됨
 
@@ -291,7 +291,7 @@ protected override bool PerformRaycast(GvrBasePointer.PointerRay pointerRay,
 
 
 # 게임 로직
-## 시작과 끝
+> ### 시작과 끝
 - `GameManager_Hunter` : 게임 로직을 수행합니다.
 
 ![](img/2-장전메뉴.png)
@@ -371,7 +371,7 @@ protected override bool PerformRaycast(GvrBasePointer.PointerRay pointerRay,
 
 <br>
 
-### 몬스터 리스폰
+> ### 몬스터 리스폰
 게임이 시작되면
 - 3개의 지역에서 랜덤으로 리스폰 합니다.
 - 방향과 속도는 기준치 범위 안에서 랜덤으로 적용됩니다.

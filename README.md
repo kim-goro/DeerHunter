@@ -97,13 +97,16 @@
 
 # 유저 컨트롤
 > ### 카메라 컨트롤
+
+![카메라](img/카메라.JPG)
+
 - `Gvr Pointer Physics Raycaster`
     - Raycater Event Mask : 레이케스터 이벤트가 발동될 레이어마스크를 선택합니다.
     - Max Raycast Hits : 레이케스트 최대 충돌 횟수
 - `kim_RecticlePointer : GvrBasePointer` : 플레이어의 입력을 처리합니다.
 
 ![카메라](img/카메라2.JPG)
-![카메라](img/카메라.JPG)
+
 ```C#
 // Gvr Pointer Physics Raycaster
 // GoogleVR_API

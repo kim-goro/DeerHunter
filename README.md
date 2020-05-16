@@ -459,9 +459,9 @@ public class DamagePopupManager : MonoBehaviour
 }
 ```
 - 데미지별 효과를 달리하였습니다.
-- 데미지 60 이상은 빨강색 크로스헤어
-- 데미지 100 이상은 큰 빨강색 크로스헤어
-- 나머지는 노란색 크로스헤어를 주었습니다.
+    - 데미지 60 이상은 빨강색 크로스헤어
+    - 데미지 100 이상은 큰 빨강색 크로스헤어
+    - 나머지는 노란색 크로스헤어를 주었습니다.
 ```c#
 //Eagle_Prefab
     public void GetShot (int Damage = 20) {

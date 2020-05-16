@@ -1,4 +1,4 @@
-# HawkHunter
+# HawkHunterVR
 > ### 목차
 ### [기획](#기획)
 - [팀원 내 역할](#팀원-내-역할)
@@ -17,9 +17,10 @@
 
 ### [게임 로직](#게임-로직)
 - [시작과 끝](#시작과-끝)
+- [몬스터 리스폰](#몬스터-리스폰)
 - [데미지 팝업 효과](#데미지-팝업-효과)
 
-### [VFX
+### [VFX](#)
 
 <br><br>
 <br><br>
@@ -39,7 +40,7 @@
 ### 개발 환경
 - 2019.08 ~ 2019.10 4학년 2학기 과제물
 - Unity 2018.2.9f1
-- Google CargoBoard
+- `Google CargoBoard`
 
 <br>
 
@@ -148,7 +149,10 @@ protected override bool PerformRaycast(GvrBasePointer.PointerRay pointerRay,
     return true;
 }
 ```
+
 ![](img/6-총질2.png)
+![](img/.png)
+
 - 레이케스트에 충돌한 오브젝트의 위치와 데이터들을 가져옵니다.
 ```c#
 //kim_RecticlePointer
@@ -217,7 +221,7 @@ protected override bool PerformRaycast(GvrBasePointer.PointerRay pointerRay,
 - 특정 오브젝트 태그가 `Monster`이면 레이케스터 충돌시 Overlay된 원형 실린더가 확대 됨
 - 특정 오브젝트 태그에 `Monster`이면 레이케스터 비충돌시 점 상태가 됨
 
-![스케치](img/1-메뉴선택.png)
+![스케치](img/캔버스.JPG)
 ```c#
 //GvrPointerInputModuleImpl
     private void UpdatePointer(GameObject previousObject)
@@ -341,6 +345,70 @@ protected override bool PerformRaycast(GvrBasePointer.PointerRay pointerRay,
 ```
 - 레벨별 속성을 달리하였습니다.
 
+![](img/전체메뉴.png)
+
+```c#
+//GameManager_Hunter
+    IEnumerator GetReadyNexyStage(float time = 0)
+    {
+        yield return new WaitForSeconds(time);
+        if (++GameManager_Hunter.Round > 3)
+        {
+            SwitchScene(RankingScene);
+            FindObjectOfType<RankManager>().RankInput(Score);
+            FindObjectOfType<RankManager>().My_Score.text = Score.ToString();
+
+        }
+        else
+        {
+            SwitchScene(StageScene);
+        }
+    }
+```
+- Title Scene -> Stage Scene -> Result Scene -> Ranking Scene  순으로
+- Round가 3번 반복될 때 까지 Stage Scene -> Result Scene 이 반복됩니다.
+
+<br>
+
+### 몬스터 리스폰
+게임이 시작되면
+- 3개의 지역에서 랜덤으로 리스폰 합니다.
+- 방향과 속도는 기준치 범위 안에서 랜덤으로 적용됩니다.
+- Round2 부터는 `KingEagle`과 `SpinEagle`이 랜덤으로 스폰됩니다.
+
+![](img/리스폰.png)
+
+```c#
+//Eagle_RespwanManager
+        while (amount != 0)
+        {
+            Destroy(Instantiate(Eagle_prefab, transform.position, transform.rotation), lifeTime);
+            amount--;
+            if (GameManager_Hunter.Round > 1)
+            {
+                if (Random.value > 0.9f)
+                {
+                    Destroy(Instantiate(KingEagle_prefab, transform.position, transform.rotation), lifeTime);
+                    continue;
+                }
+                if (Random.value > 0.9f)
+                {
+                    Destroy(Instantiate(SpinEagle_prefab, transform.position, transform.rotation), lifeTime);
+                    continue;
+                }
+            }
+        }
+```
+- 매개변수로 주어진 `매의 수`에 따라 리스폰 시키는 매의 수와 종류를 달리 합니다.
+   
+![](img/몬스터종류.png)
+
+- `Nomal_Eagle` 체력: 100, 속도 18~29, 점수 1000
+- `King_Ealge` 체력: 160, 속도 28~39, 점수 1500 ( 1초 마다 방향전환 )
+- `Spin_Eagle` 체력: 100, 속도 18~29, 점수 1500 ( 큰 원을 그리며 올라갑니다)
+
+
+
 <br>
 
 ## 데미지 팝업 효과
@@ -451,3 +519,10 @@ public class DamagePopupManager : MonoBehaviour
 - Shotgun_Idle
 
 ![](img/애니메이션.JPG)
+
+모바일 성능에 적합한 로우폴리, 저사양 VFX 및 안개효과를 사용하였습니다
+
+![](img/fx1.png)
+![](img/fx2.png)
+![](img/fx3.png)
+

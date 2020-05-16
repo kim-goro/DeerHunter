@@ -40,7 +40,7 @@
 - `HawkHunter.apk` 로 직접 실행해 보실 수 있습니다.
 - https://www.dropbox.com/s/np8l6ie19nqbum9/HawkHunter.apk?dl=0
 
-![](VRgoogle_full.gif)
+![](img/VRgoogle_full.gif)
 
 <br>
 
